@@ -1,6 +1,6 @@
 // require mongoose module
 const mongoose = require('mongoose'),
-      url = process.env.MONGOLAB_URL || 'mongodb+srv://hamad-adel-27017:hamad27017connect@developmentcluster-88s7d.mongodb.net/test?retryWrites=true';
+      url = process.env.MONGOLAB_URL || 'mongodb://localhost:27017/TodoApp';
 
 // use mongoose Promise
 mongoose.Promise = global.Promise;
