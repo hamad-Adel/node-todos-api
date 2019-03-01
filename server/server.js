@@ -10,6 +10,10 @@ const express = require('express'),
 // Configure server middleware
 app.use(bodyParser.json());
 
+app.get('/', (res,req) => {
+  res.send('<h1>Welcome in todo api</h1>');
+});
+
 // create new todo
 app.post('/todos', (req, res) => {
   const todo = new Todo({
