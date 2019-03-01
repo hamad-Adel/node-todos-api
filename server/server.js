@@ -45,8 +45,8 @@ app.get('/todos/:id', (req, res) => {
 });
 
 
-app.listen(3000, (err) => {
+app.listen(port, (err) => {
   if (err)
     return console.log('Error:', err);
-  console.log('Started on port 3000');
+  console.log(`Started on port ${port}`);
 })
