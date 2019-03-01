@@ -6,7 +6,7 @@ const mongoose = require('mongoose'),
 mongoose.Promise = global.Promise;
 // connect ot mongodb
 
-mongoose.connect(url, {useNewUrlParser: true} );
+mongoose.connect(url, {useNewUrlParser: true} ).then( success => console.log(success)).catch( err => console.log(err) );
 
 module.exports = {mongoose}
 
