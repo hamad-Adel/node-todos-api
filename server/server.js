@@ -15,21 +15,16 @@ app.post('/todos', (req, res) => {
   const todo = new Todo({
     text: req.body.text
   });
-
-  todo.save().then((doc) => {
-    res.send(doc);
-  }, (err) => {
-    res.status(400).send(err);  // bad input
-  });
+  todo.save().then(doc => res.send(doc)).catch( err => res.status(400).send(err));
 });
 
 // List all todos
 app.get('/todos', (req, res) => {
   Todo.find().then( todos => {
     res.send({todos});
-  }, err => {
+  }).catch((err)=> {
     res.status(400).send(err);
-  })
+  });
 })
 
 // GET /todos/id [url parameter]
