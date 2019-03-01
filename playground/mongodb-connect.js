@@ -1,17 +1,16 @@
 const {MongoClient, objectID} = require('mongodb'),
-      url = 'mongodb+srv://hamad-adel-27017:hamad27017connect@developmentcluster-88s7d.mongodb.net/test?retryWrites=true';
-
+      url = 'mongodb+srv://hamad-adel-27017:hamad-atlas-93@developmentcluster-88s7d.mongodb.net/test';
 
 MongoClient.connect(url, {useNewUrlParser: true}, (err, client) => {
   if (err)
     return console.log('Unable to connect to MonogodDB server', err);
   console.log('Connected to MongoDB server');
-  const db = client.db('TodoApp')
+  const db = client.db('test')
   console.log(objectID);
 
 
   db.collection('todos').insertOne({
-    text: 'Something to do',
+    text: 'go to mosh\'s node course',
     completed: false
   }, (err, result) => {
     if (err)
@@ -19,16 +18,16 @@ MongoClient.connect(url, {useNewUrlParser: true}, (err, client) => {
     console.log('Todo inserted successfully', JSON.stringify(result.ops, undefined, 2));
   });
 
-  // db.collection('Users').insertOne({
-  //   name: 'Hamad adel mahmoud',
-  //   email: 'hamadwebdeveloper@gmail.com',
+  // db.collection('users').insertOne({
+  //   name: 'Mahmoud abo zid',
+  //   email: 'fron-endAboZid@gmail.com',
   //   age: 25,
-  //   location: 'El-marg, cairo-egypt'
+  //   location: 'bany-souef-egypt'
   // }, (err, result) => {
   //   if (err)
   //     return console.log('Unable to insert user', err);
   //
-  //   console.log('User inserted successfully', result);
+  //   console.log('User inserted successfully', result.ops);
   // })
 
   client.close();
